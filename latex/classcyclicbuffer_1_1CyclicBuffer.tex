@@ -1,0 +1,282 @@
+\hypertarget{classcyclicbuffer_1_1CyclicBuffer}{\section{cyclicbuffer\-:\-:\-Cyclic\-Buffer$<$ \-T $>$ \-Class \-Template \-Reference}
+\label{classcyclicbuffer_1_1CyclicBuffer}\index{cyclicbuffer\-::\-Cyclic\-Buffer$<$ T $>$@{cyclicbuffer\-::\-Cyclic\-Buffer$<$ T $>$}}
+}
+
+
+{\ttfamily \#include $<$cyclic\-\_\-buffer.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcyclicbuffer_1_1CyclicBuffer_a53e229b6d7ebc4e41ba8446200e796df}{\-Cyclic\-Buffer} (size\-\_\-t buffer\-\_\-size=1024)
+\item 
+size\-\_\-t \hyperlink{classcyclicbuffer_1_1CyclicBuffer_a52275fdd9d4f5ab8f8d761d5f38e7c36}{\-Read\-Space} (void) const 
+\begin{DoxyCompactList}\small\item\em 当前缓存中的可读空间 \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classcyclicbuffer_1_1CyclicBuffer_a4c087db19f0aebf06ef990164bfe65d8}{\-Write\-Space} (void) const 
+\begin{DoxyCompactList}\small\item\em 当前缓存中的可写空间 \end{DoxyCompactList}\item 
+void \hyperlink{classcyclicbuffer_1_1CyclicBuffer_a4a8bcdf0e862f75182bcc8434fed32c3}{\-Write\-To\-Buffer} (const \-T $\ast$const in\-Ptr, size\-\_\-t length)
+\begin{DoxyCompactList}\small\item\em 向缓存中写入数据 \end{DoxyCompactList}\item 
+void \hyperlink{classcyclicbuffer_1_1CyclicBuffer_a2150d401e03dfe8dd6818e4af592e624}{\-Read\-From\-Buffer} (\-T $\ast$const out\-Ptr, size\-\_\-t length) const 
+\begin{DoxyCompactList}\small\item\em 由缓存的读取数据 \end{DoxyCompactList}\item 
+void \hyperlink{classcyclicbuffer_1_1CyclicBuffer_a925d7b6c58e4880a0ede77a49f18e5f2}{\-Push\-Back} (const \-T \&ele)
+\begin{DoxyCompactList}\small\item\em 写入单个数据 \end{DoxyCompactList}\item 
+\-T \hyperlink{classcyclicbuffer_1_1CyclicBuffer_a7a3c36d77ab645e6ca2f143e8f26d0c3}{\-Pop\-Front} ()
+\begin{DoxyCompactList}\small\item\em 单个数据的读 \end{DoxyCompactList}\item 
+void \hyperlink{classcyclicbuffer_1_1CyclicBuffer_aaea4fe781dbf7705cfddabd7d3b66767}{\-Update\-Read\-Ptr} (signed long size)
+\begin{DoxyCompactList}\small\item\em 调整写指针 \end{DoxyCompactList}\item 
+void \hyperlink{classcyclicbuffer_1_1CyclicBuffer_a993c3932158b4371209119afb21585c8}{\-Update\-Write\-Ptr} (signed long size)
+\begin{DoxyCompactList}\small\item\em 调整读指针 \end{DoxyCompactList}\item 
+\-T \& \hyperlink{classcyclicbuffer_1_1CyclicBuffer_a11bd152dafd31057926f1c16de0ea5ec}{operator\mbox{[}$\,$\mbox{]}} (size\-\_\-t pos) const 
+\begin{DoxyCompactList}\small\item\em \mbox{[}brief description\mbox{]} \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classcyclicbuffer_1_1CyclicBuffer_afbb87d84cd7328dc491c26ea1ef6d643}{\-Read\-Ptr} () const 
+\begin{DoxyCompactList}\small\item\em 当前读指针位置 \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classcyclicbuffer_1_1CyclicBuffer_ac4e1aadac568e1458eba1e81f7c7980e}{\-Write\-Ptr} () const 
+\begin{DoxyCompactList}\small\item\em 当前写指针位置 \end{DoxyCompactList}\item 
+\hypertarget{classcyclicbuffer_1_1CyclicBuffer_a1dd62709d33861427c82054693a88717}{void \hyperlink{classcyclicbuffer_1_1CyclicBuffer_a1dd62709d33861427c82054693a88717}{\-Clear} ()}\label{classcyclicbuffer_1_1CyclicBuffer_a1dd62709d33861427c82054693a88717}
+
+\begin{DoxyCompactList}\small\item\em 清楚当前缓存数据，即读写指针置0 \end{DoxyCompactList}\item 
+void \hyperlink{classcyclicbuffer_1_1CyclicBuffer_a1cbb7e04601010518388b25fa8c6afa4}{\-Resize} (size\-\_\-t new\-Length)
+\begin{DoxyCompactList}\small\item\em 调整缓存空间的大小 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$typename T$>$class cyclicbuffer\-::\-Cyclic\-Buffer$<$ T $>$}
+
+循环缓存类，可循环存取任意内置数据类型，目前仅支持内置数据类型
+
+
+\begin{DoxyTemplParams}{\-Template Parameters}
+{\em \-T} & 类模板的模板参数，只能是内置数据类型 \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcyclicbuffer_1_1CyclicBuffer_a53e229b6d7ebc4e41ba8446200e796df}{\index{cyclicbuffer\-::\-Cyclic\-Buffer@{cyclicbuffer\-::\-Cyclic\-Buffer}!\-Cyclic\-Buffer@{\-Cyclic\-Buffer}}
+\index{\-Cyclic\-Buffer@{\-Cyclic\-Buffer}!cyclicbuffer::CyclicBuffer@{cyclicbuffer\-::\-Cyclic\-Buffer}}
+\subsubsection[{\-Cyclic\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf cyclicbuffer\-::\-Cyclic\-Buffer}$<$ \-T $>$\-::{\bf \-Cyclic\-Buffer} (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{buffer\-\_\-size = {\ttfamily 1024}}
+\end{DoxyParamCaption}
+)}}\label{classcyclicbuffer_1_1CyclicBuffer_a53e229b6d7ebc4e41ba8446200e796df}
+构造函数，可接受无参数构造，无参数时候以默认大小(1024)开辟空间
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em buffer\-\_\-size} & 缓存空间大小 \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcyclicbuffer_1_1CyclicBuffer_a11bd152dafd31057926f1c16de0ea5ec}{\index{cyclicbuffer\-::\-Cyclic\-Buffer@{cyclicbuffer\-::\-Cyclic\-Buffer}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!cyclicbuffer::CyclicBuffer@{cyclicbuffer\-::\-Cyclic\-Buffer}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ \-T\& {\bf cyclicbuffer\-::\-Cyclic\-Buffer}$<$ \-T $>$\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{pos}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcyclicbuffer_1_1CyclicBuffer_a11bd152dafd31057926f1c16de0ea5ec}
+
+
+\mbox{[}brief description\mbox{]} 
+
+重载操作符\mbox{[}\mbox{]}，以当前读指针位置为开始、写指针位置 为结束，读取缓存中任意位置元素
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pos} & 外部传入下标(相对于读指针的偏移) \\
+\hline
+\end{DoxyParams}
+\hypertarget{classcyclicbuffer_1_1CyclicBuffer_a7a3c36d77ab645e6ca2f143e8f26d0c3}{\index{cyclicbuffer\-::\-Cyclic\-Buffer@{cyclicbuffer\-::\-Cyclic\-Buffer}!\-Pop\-Front@{\-Pop\-Front}}
+\index{\-Pop\-Front@{\-Pop\-Front}!cyclicbuffer::CyclicBuffer@{cyclicbuffer\-::\-Cyclic\-Buffer}}
+\subsubsection[{\-Pop\-Front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ \-T {\bf cyclicbuffer\-::\-Cyclic\-Buffer}$<$ \-T $>$\-::{\bf \-Pop\-Front} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcyclicbuffer_1_1CyclicBuffer_a7a3c36d77ab645e6ca2f143e8f26d0c3}
+
+
+单个数据的读 
+
+将缓存中第一个(就是读指针指向的位置)元素返回，同时 调整读指针 \begin{DoxyReturn}{\-Returns}
+缓存中第一个元素 
+\end{DoxyReturn}
+\hypertarget{classcyclicbuffer_1_1CyclicBuffer_a925d7b6c58e4880a0ede77a49f18e5f2}{\index{cyclicbuffer\-::\-Cyclic\-Buffer@{cyclicbuffer\-::\-Cyclic\-Buffer}!\-Push\-Back@{\-Push\-Back}}
+\index{\-Push\-Back@{\-Push\-Back}!cyclicbuffer::CyclicBuffer@{cyclicbuffer\-::\-Cyclic\-Buffer}}
+\subsubsection[{\-Push\-Back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf cyclicbuffer\-::\-Cyclic\-Buffer}$<$ \-T $>$\-::{\bf \-Push\-Back} (
+\begin{DoxyParamCaption}
+\item[{const \-T \&}]{ele}
+\end{DoxyParamCaption}
+)}}\label{classcyclicbuffer_1_1CyclicBuffer_a925d7b6c58e4880a0ede77a49f18e5f2}
+
+
+写入单个数据 
+
+在当前缓存的结尾处，也就是写指针指向的位置后面写入 一个数据，同时调整读指针
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em ele} & 要写入的数据 \\
+\hline
+\end{DoxyParams}
+\hypertarget{classcyclicbuffer_1_1CyclicBuffer_a2150d401e03dfe8dd6818e4af592e624}{\index{cyclicbuffer\-::\-Cyclic\-Buffer@{cyclicbuffer\-::\-Cyclic\-Buffer}!\-Read\-From\-Buffer@{\-Read\-From\-Buffer}}
+\index{\-Read\-From\-Buffer@{\-Read\-From\-Buffer}!cyclicbuffer::CyclicBuffer@{cyclicbuffer\-::\-Cyclic\-Buffer}}
+\subsubsection[{\-Read\-From\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf cyclicbuffer\-::\-Cyclic\-Buffer}$<$ \-T $>$\-::{\bf \-Read\-From\-Buffer} (
+\begin{DoxyParamCaption}
+\item[{\-T $\ast$const}]{out\-Ptr, }
+\item[{size\-\_\-t}]{length}
+\end{DoxyParamCaption}
+) const}}\label{classcyclicbuffer_1_1CyclicBuffer_a2150d401e03dfe8dd6818e4af592e624}
+
+
+由缓存的读取数据 
+
+由缓存中读取一段数据，输入为读取数据的指针、以及 本次要读取数据的长度
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em out\-Ptr} & 输出数据指针 \\
+\hline
+{\em length} & 读取的数据长度 \\
+\hline
+\end{DoxyParams}
+\hypertarget{classcyclicbuffer_1_1CyclicBuffer_afbb87d84cd7328dc491c26ea1ef6d643}{\index{cyclicbuffer\-::\-Cyclic\-Buffer@{cyclicbuffer\-::\-Cyclic\-Buffer}!\-Read\-Ptr@{\-Read\-Ptr}}
+\index{\-Read\-Ptr@{\-Read\-Ptr}!cyclicbuffer::CyclicBuffer@{cyclicbuffer\-::\-Cyclic\-Buffer}}
+\subsubsection[{\-Read\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ size\-\_\-t {\bf cyclicbuffer\-::\-Cyclic\-Buffer}$<$ \-T $>$\-::{\bf \-Read\-Ptr} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcyclicbuffer_1_1CyclicBuffer_afbb87d84cd7328dc491c26ea1ef6d643}
+
+
+当前读指针位置 
+
+读指针位置，缓存起始位置为0 \hypertarget{classcyclicbuffer_1_1CyclicBuffer_a52275fdd9d4f5ab8f8d761d5f38e7c36}{\index{cyclicbuffer\-::\-Cyclic\-Buffer@{cyclicbuffer\-::\-Cyclic\-Buffer}!\-Read\-Space@{\-Read\-Space}}
+\index{\-Read\-Space@{\-Read\-Space}!cyclicbuffer::CyclicBuffer@{cyclicbuffer\-::\-Cyclic\-Buffer}}
+\subsubsection[{\-Read\-Space}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ size\-\_\-t {\bf cyclicbuffer\-::\-Cyclic\-Buffer}$<$ \-T $>$\-::{\bf \-Read\-Space} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcyclicbuffer_1_1CyclicBuffer_a52275fdd9d4f5ab8f8d761d5f38e7c36}
+
+
+当前缓存中的可读空间 
+
+返回当前缓存中的可读取空间大小,返回大小为实际空间-\/1， 目的是方便管理读写指针 \begin{DoxyReturn}{\-Returns}
+可读空间大小 
+\end{DoxyReturn}
+\hypertarget{classcyclicbuffer_1_1CyclicBuffer_a1cbb7e04601010518388b25fa8c6afa4}{\index{cyclicbuffer\-::\-Cyclic\-Buffer@{cyclicbuffer\-::\-Cyclic\-Buffer}!\-Resize@{\-Resize}}
+\index{\-Resize@{\-Resize}!cyclicbuffer::CyclicBuffer@{cyclicbuffer\-::\-Cyclic\-Buffer}}
+\subsubsection[{\-Resize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf cyclicbuffer\-::\-Cyclic\-Buffer}$<$ \-T $>$\-::{\bf \-Resize} (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{new\-Length}
+\end{DoxyParamCaption}
+)}}\label{classcyclicbuffer_1_1CyclicBuffer_a1cbb7e04601010518388b25fa8c6afa4}
+
+
+调整缓存空间的大小 
+
+为满足需要动态调整缓存大小，通过realloc函数实现 数据的处理原则与realloc函数相同
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em new\-Length} & 新的缓存空间大小， \\
+\hline
+\end{DoxyParams}
+\hypertarget{classcyclicbuffer_1_1CyclicBuffer_aaea4fe781dbf7705cfddabd7d3b66767}{\index{cyclicbuffer\-::\-Cyclic\-Buffer@{cyclicbuffer\-::\-Cyclic\-Buffer}!\-Update\-Read\-Ptr@{\-Update\-Read\-Ptr}}
+\index{\-Update\-Read\-Ptr@{\-Update\-Read\-Ptr}!cyclicbuffer::CyclicBuffer@{cyclicbuffer\-::\-Cyclic\-Buffer}}
+\subsubsection[{\-Update\-Read\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf cyclicbuffer\-::\-Cyclic\-Buffer}$<$ \-T $>$\-::{\bf \-Update\-Read\-Ptr} (
+\begin{DoxyParamCaption}
+\item[{signed long}]{size}
+\end{DoxyParamCaption}
+)}}\label{classcyclicbuffer_1_1CyclicBuffer_aaea4fe781dbf7705cfddabd7d3b66767}
+
+
+调整写指针 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em m\-Write\-Ptr} & \\
+\hline
+\end{DoxyParams}
+缓存中数据写指针的调整，与数据读写分开，可通过 定义宏(\-U\-P\-D\-A\-T\-E\-\_\-\-P\-T\-R\-\_\-\-M\-A\-N\-U\-A\-L\-L\-Y)来决定指针调整时刻
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em long} & 调整长度 \\
+\hline
+\end{DoxyParams}
+\hypertarget{classcyclicbuffer_1_1CyclicBuffer_a993c3932158b4371209119afb21585c8}{\index{cyclicbuffer\-::\-Cyclic\-Buffer@{cyclicbuffer\-::\-Cyclic\-Buffer}!\-Update\-Write\-Ptr@{\-Update\-Write\-Ptr}}
+\index{\-Update\-Write\-Ptr@{\-Update\-Write\-Ptr}!cyclicbuffer::CyclicBuffer@{cyclicbuffer\-::\-Cyclic\-Buffer}}
+\subsubsection[{\-Update\-Write\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf cyclicbuffer\-::\-Cyclic\-Buffer}$<$ \-T $>$\-::{\bf \-Update\-Write\-Ptr} (
+\begin{DoxyParamCaption}
+\item[{signed long}]{size}
+\end{DoxyParamCaption}
+)}}\label{classcyclicbuffer_1_1CyclicBuffer_a993c3932158b4371209119afb21585c8}
+
+
+调整读指针 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em m\-Read\-Ptr} & \\
+\hline
+\end{DoxyParams}
+缓存中数据读指针的调整，与数据读写分开，可通过 定义宏(\-U\-P\-D\-A\-T\-E\-\_\-\-P\-T\-R\-\_\-\-M\-A\-N\-U\-A\-L\-L\-Y)来决定指针调整时刻
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em long} & 调整长度 \\
+\hline
+\end{DoxyParams}
+\hypertarget{classcyclicbuffer_1_1CyclicBuffer_ac4e1aadac568e1458eba1e81f7c7980e}{\index{cyclicbuffer\-::\-Cyclic\-Buffer@{cyclicbuffer\-::\-Cyclic\-Buffer}!\-Write\-Ptr@{\-Write\-Ptr}}
+\index{\-Write\-Ptr@{\-Write\-Ptr}!cyclicbuffer::CyclicBuffer@{cyclicbuffer\-::\-Cyclic\-Buffer}}
+\subsubsection[{\-Write\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ size\-\_\-t {\bf cyclicbuffer\-::\-Cyclic\-Buffer}$<$ \-T $>$\-::{\bf \-Write\-Ptr} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcyclicbuffer_1_1CyclicBuffer_ac4e1aadac568e1458eba1e81f7c7980e}
+
+
+当前写指针位置 
+
+写指针位置，缓存起始位置为0 \hypertarget{classcyclicbuffer_1_1CyclicBuffer_a4c087db19f0aebf06ef990164bfe65d8}{\index{cyclicbuffer\-::\-Cyclic\-Buffer@{cyclicbuffer\-::\-Cyclic\-Buffer}!\-Write\-Space@{\-Write\-Space}}
+\index{\-Write\-Space@{\-Write\-Space}!cyclicbuffer::CyclicBuffer@{cyclicbuffer\-::\-Cyclic\-Buffer}}
+\subsubsection[{\-Write\-Space}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ size\-\_\-t {\bf cyclicbuffer\-::\-Cyclic\-Buffer}$<$ \-T $>$\-::{\bf \-Write\-Space} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classcyclicbuffer_1_1CyclicBuffer_a4c087db19f0aebf06ef990164bfe65d8}
+
+
+当前缓存中的可写空间 
+
+返回当前缓存中的可写入空间大小,返回大小为实际空间-\/1， 目的是方便管理读写指针 \begin{DoxyReturn}{\-Returns}
+可写空间大小 
+\end{DoxyReturn}
+\hypertarget{classcyclicbuffer_1_1CyclicBuffer_a4a8bcdf0e862f75182bcc8434fed32c3}{\index{cyclicbuffer\-::\-Cyclic\-Buffer@{cyclicbuffer\-::\-Cyclic\-Buffer}!\-Write\-To\-Buffer@{\-Write\-To\-Buffer}}
+\index{\-Write\-To\-Buffer@{\-Write\-To\-Buffer}!cyclicbuffer::CyclicBuffer@{cyclicbuffer\-::\-Cyclic\-Buffer}}
+\subsubsection[{\-Write\-To\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf cyclicbuffer\-::\-Cyclic\-Buffer}$<$ \-T $>$\-::{\bf \-Write\-To\-Buffer} (
+\begin{DoxyParamCaption}
+\item[{const \-T $\ast$const}]{in\-Ptr, }
+\item[{size\-\_\-t}]{length}
+\end{DoxyParamCaption}
+)}}\label{classcyclicbuffer_1_1CyclicBuffer_a4a8bcdf0e862f75182bcc8434fed32c3}
+
+
+向缓存中写入数据 
+
+向缓存中写入一段数据，输入为要写入数据的指针、以及 本次要写入数据的长度，数据连续存储
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em in\-Ptr} & 要写入数据的指针 \\
+\hline
+{\em length} & 要写入数据的长度 \\
+\hline
+\end{DoxyParams}
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cyclic\-\_\-buffer.\-h\end{DoxyCompactItemize}
